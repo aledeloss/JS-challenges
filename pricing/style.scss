@@ -1,0 +1,248 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+/* Mediaqueries */
+$mobile: 375px;
+$desktop: 1440px;
+
+/* Colors */
+$linearGradient: linear-gradient(
+  to right,
+  hsl(236, 72%, 79%),
+  hsl(237, 63%, 64%)
+);
+$veryLightGrayishBlue: hsl(240, 78%, 98%);
+$lightGrayishBlue: hsl(234, 14%, 74%);
+$grayishBlue: hsl(233, 13%, 49%);
+$darkGrayishBlue: hsl(232, 13%, 33%);
+
+// Mixins
+
+@mixin mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  background-color: $veryLightGrayishBlue;
+  color: $grayishBlue;
+}
+
+/* Header */
+
+.bg-top {
+  z-index: -1;
+  position: fixed;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 15vh;
+}
+
+.subscriptionSelection {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 500px;
+
+  .switch {
+    display: flex;
+    align-items: center;
+    // border: solid blue 1px;
+  }
+}
+
+.subscriptionType {
+  color: $lightGrayishBlue;
+}
+
+/* Cards */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 25px 20px;
+  width: 320px;
+  height: 410px;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: $darkGrayishBlue;
+  border: none;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    padding: 0px;
+  }
+
+  li {
+    height: 35px;
+    list-style-type: none;
+    border-bottom: $grayishBlue solid 0.5px;
+    border-color: $lightGrayishBlue;
+    width: 100%;
+    font-weight: 200;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+  }
+
+  li:first-child {
+    height: 35px;
+    list-style-type: none;
+    border-bottom: $grayishBlue solid 0.5px;
+    border-top: $grayishBlue solid 0.5px;
+    border-color: $lightGrayishBlue;
+    width: 100%;
+    font-weight: 200;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    background-image: $linearGradient;
+    height: 60px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+  }
+}
+
+@include desktop {
+  .card {
+    margin-left: 0px;
+    margin-right: 0px;
+  .mouseOverCard {
+    height: 550px;
+  }
+  }
+}
+
+.card:hover {
+  background-image: $linearGradient;
+  color: white;
+}
+
+.subscription {
+  font-size: 17px;
+  font-weight: 200;
+}
+
+.dollar {
+  font-size: 30px;
+}
+
+.price {
+  font-size: 65px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mouseOverCard {
+  background-color: $linearGradient;
+  height: 430px;
+  cursor: pointer;
+}
+
+.mouseOverCard button {
+    background-color: white;
+    background-image: none;
+    color: hsl(237, 63%, 64%);
+}
+
+/* Switch style - W3School*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-image: $linearGradient;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// Footer
+.footer {
+  display: flex;
+  justify-content: center;
+  font-weight: 200;
+}

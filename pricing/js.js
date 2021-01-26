@@ -1,4 +1,4 @@
-// MOSTRAR INFORMACIÓN
+//Data
 let info = [
     {
         subscription: 'Basic',
@@ -26,33 +26,53 @@ let info = [
     }
 ]
 
+// First Page Load
+window.addEventListener("load", () => {
+    renderCards();
+  });
 
 //CAMBIO DE SUSCRIPCIÓN
-let activeSubscription
+let activeSubscription = false
 let price = document.querySelector('.price')
+let card = document.querySelector(".card")
 
 document.querySelector('.switchThing').addEventListener("click", function(){
    activeSubscription = !activeSubscription
+     // Clean cards
+  cardsContent.innerHTML = "";
+  // Re-render cards
+  renderCards();
    console.log(activeSubscription)
    return activeSubscription
 });
 
 
-//RENDERIZADO DE TARJETAS
-let renderCards = document.querySelector('.cards')
 
-let cardsContent = info.map((card => (
-    renderCards.innerHTML += `
+//RENDERIZADO DE TARJETAS
+let cardsContent = document.querySelector('.cards')
+
+const renderCards = () => {
+ info.map((card => (
+    cardsContent.innerHTML += `
         <div class="card">
             <div class="subscription">${card.subscription}</div>
-            <div class="price">$ ${activeSubscription == true ? card.anually : card.monthly}</div>
-            <div class="cardContent">
-                <div class="storage">${card.storage} Storage</div>
-                <div class="users">${card.users} Users Allowed</div>
-                <div class="limit">Send up to ${card.limit} GB</div>
-            </div>
-            <button class="learnMoreBtn">Learn more</button>
+            <div class="price"><span class="dollar">&dollar; </span>${activeSubscription == true ? card.anually : card.monthly}</div>
+            <ul class="cardContent">
+                <li class="storage">${card.storage} Storage</li>
+                <li class="users">${card.users} Users Allowed</li>
+                <li class="limit">Send up to ${card.limit} GB</li>
+            </ul>
+            <button class="learnMoreBtn">LEARN MORE</button>
         </div>
     `
     )
 ))
+
+document.querySelector(".card").addEventListener('mouseover', function(){
+    document.querySelector(".card").classList.add('mouseOverCard')
+})
+document.querySelector(".card").addEventListener('mouseleave', function(){
+    document.querySelector(".card").classList.remove('mouseOverCard')
+})
+
+}
