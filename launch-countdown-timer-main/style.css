@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+/* Colors */
+:root {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 14px;
+}
+
+* {
+  border: solid orange 0.5px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding: 30px;
+  font-weight: 50;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: aqua solid;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: solid yellow 3px;
+}
+
+.number {
+  color: #fb6087;
+  font-size: 2.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.words-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.time-unity {
+  display: flex;
+  justify-content: center;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+.days, .hours, .minutes, .seconds {
+  border: solid royalblue 1px;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=style.css.map */

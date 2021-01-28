@@ -1,0 +1,97 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+/* Colors */
+$srayish-blue: hsl(237, 18%, 59%);
+$soft-red: hsl(345, 95%, 68%);
+$white: hsl(0, 0%, 100%);
+$dark-desaturated-blue: hsl(236, 21%, 26%);
+$very-dark-blue: hsl(235, 16%, 14%);
+$very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+
+// Fonts
+:root {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 14px;
+}
+
+//Responsive breakpoints
+
+//Mixins
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//General
+
+* {
+  border: solid orange .5px;
+}
+
+body {
+  @include center();
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  // padding-left: 2em;
+  // padding-right: 2em;
+  // padding-top: 4em;
+  // padding-bottom: 4em;
+  padding: 30px;
+  font-weight: 50;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+border: aqua solid;
+}
+
+.countdown-container {
+  @include center();
+}
+
+.time {
+  @include center();
+  flex-direction: column;
+  border: solid yellow 3px;
+}
+.number {
+color: $soft-red;
+font-size: 2.4em;
+@include center();
+width: 50px;
+}
+.words-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.time-unity {
+  display: flex;
+  justify-content: center;
+}
+
+
+//Footer
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+.days, .hours, .minutes, .seconds {
+    border: solid royalblue 1px;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
