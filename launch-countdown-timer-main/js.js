@@ -1,7 +1,21 @@
+// Get storage Time
+window.addEventListener("load", () => {
+    getStorageTime();
+});
+
 // Set time for countdown
 let dueDate = new Date('February 19, 2021 00:0:00')
-// (dueDate.setDate(dueDate.getDate() + 14))
+// let automaticDate = new Date()
+// automaticDate = automaticDate.setDate(automaticDate.getDate() + 14)
+// console.log(automaticDate)
 dateInMilisec = dueDate.getTime();
+
+function getStorageTime(){
+    let days = localStorage.getItem("localDays") ? localStorage.getItem("localDays") : Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = localStorage.getItem("localHours") ? localStorage.getItem("localHours") : Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = localStorage.getItem("localMinutes") ? localStorage.getItem("localMinutes") : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = localStorage.getItem("localSeconds") ? localStorage.getItem("localSeconds") : Math.floor((distance % (1000 * 60)) / 1000);
+}
 
 function setTime() {
 
@@ -26,10 +40,22 @@ hoursDiv.innerHTML = hours
 minutesDiv.innerHTML = minutes
 secondsDiv.innerHTML = seconds
 
+// Set time in localStorage
+localStorage.setItem("localDays", days);
+localStorage.setItem("localHours", hours);
+localStorage.setItem("localMinutes", minutes);
+localStorage.setItem("localSeconds", seconds);
 }
-
-setTime()
 
 var updateCountdown = setInterval(function() {
     setTime()
 }, 1000)
+
+// Reset Button
+document.querySelector('.reset').addEventListener('click', () => {
+    resetFunc()
+})
+
+function resetFunc() {
+    alert('reset')
+}
