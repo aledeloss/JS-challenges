@@ -96,6 +96,18 @@ h1 {
   padding: 5px;
 }
 
+.reset-btn {
+  height: 40px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: $dark-desaturated-blue;
+  color: $soft-red;
+  border: none;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  @include center();
+  font-weight: 50;
+}
 
 //Footer
 .icons-container {
