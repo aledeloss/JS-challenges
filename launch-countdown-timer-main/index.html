@@ -21,7 +21,12 @@
   </head>
 
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="569" class="bg-top">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1440"
+      height="569"
+      class="bg-top"
+    >
       <path
         fill="#46485B"
         fill-rule="evenodd"
@@ -51,7 +56,28 @@
       </div>
     </div>
 
-    <div type="button" class="reset-btn">Reset</div>
+    <!-- Modal -->
+    <div id="modal">
+      <form action="">
+        <label for="year-pick">Year</label>
+        <input type="text" class="year-pick" name="year" id="year-pick" />
+        <label for="month-pick">Month</label>
+        <input type="text" class="month-pick" name="month" id="month-pick" />
+        <label for="day-pick" class="day-pick">Day</label>
+        <input type="text" name="day" class="day-pick" id="day-pick" />
+      </form>
+      <div class="modal-btn-container">
+        <button type="button" class="cancel-btn modal-btn">Cancel</button>
+        <button type="button" class="submit-btn modal-btn">Go!</button>
+      </div>
+    </div>
+
+    <div class="buttons-container">
+      <button type="button" class="reset-btn">Reset</button>
+      <button type="button" id="pick-btn" class="pick-btn">Pick a date</button>
+    </div>
+
+    <!-- End of modal -->
 
     <!-- Footer -->
     <div class="icons-container">

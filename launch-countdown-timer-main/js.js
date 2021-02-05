@@ -1,31 +1,21 @@
-// Get storage Time
-// window.addEventListener("load", () => {
-//   getStorageTime();
-// });
+let dateInMilisec = ''
 
-// Set time for countdown
+window.onload = function() {
+  if(localStorage.getItem("localDateInMilisec")) {
+    dateInMilisec = localStorage.getItem("localDateInMilisec")
+   } else {
+     setDueTime()
+    }
+    return dateInMilisec
+}
+
+// Set automatic 14 days countdown
 function setDueTime() {
   let automaticDate = new Date();
   automaticDate.setDate(automaticDate.getDate() + 14);
-  var dueDate = automaticDate;
-  dateInMilisec = dueDate.getTime();
+  dateInMilisec = automaticDate.getTime();
 }
-setDueTime();
-
-// function getStorageTime() {
-//   let days = localStorage.getItem("localDays")
-//     ? localStorage.getItem("localDays")
-//     : Math.floor(distance / (1000 * 60 * 60 * 24));
-//   let hours = localStorage.getItem("localHours")
-//     ? localStorage.getItem("localHours")
-//     : Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//   let minutes = localStorage.getItem("localMinutes")
-//     ? localStorage.getItem("localMinutes")
-//     : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//   let seconds = localStorage.getItem("localSeconds")
-//     ? localStorage.getItem("localSeconds")
-//     : Math.floor((distance % (1000 * 60)) / 1000);
-// }
+// setDueTime();
 
 function setTime() {
   // Calcular distance between now and duedate
@@ -48,12 +38,6 @@ function setTime() {
   hoursDiv.innerHTML = hours;
   minutesDiv.innerHTML = minutes;
   secondsDiv.innerHTML = seconds;
-
-  // Set time in localStorage
-  //   localStorage.setItem("localDays", days);
-  //   localStorage.setItem("localHours", hours);
-  //   localStorage.setItem("localMinutes", minutes);
-  //   localStorage.setItem("localSeconds", seconds);
 }
 
 function updateCountdown() {
@@ -65,9 +49,52 @@ updateCountdown();
 
 // Reset Button
 document.querySelector(".reset-btn").addEventListener("click", () => {
-  resetFunc();
+  setDueTime();
 });
 
-function resetFunc() {
-  setDueTime();
+// Pick a date Button
+document.querySelector(".submit-btn").addEventListener("click", () => {
+  pickADate();
+  modal.style.display = "none"
+});
+
+function pickADate() {
+  let yearPick = document.getElementById("year-pick").value;
+  let monthPick = document.getElementById("month-pick").value;
+  let dayPick = document.getElementById("day-pick").value;
+  let dueDate = new Date(yearPick, monthPick - 1, dayPick);
+  console.log("Due date: " + dueDate);
+  dateInMilisec = dueDate.getTime();
 }
+
+// Modal
+var modal = document.getElementById("modal");
+var pickBtn = document.getElementById("pick-btn");
+var cancelBtn = document.querySelector(".cancel-btn");
+
+// Show modal
+pickBtn.onclick = function () {
+  modal.style.display = "flex";
+};
+
+// Close modal
+cancelBtn.onclick = function () {
+  modal.style.display = "none"
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+  // Set time in localStorage
+window.onunload = function() {
+  localStorage.setItem("localDateInMilisec", dateInMilisec);
+  localStorage.setItem("localDays", days);
+  localStorage.setItem("localHours", hours);
+  localStorage.setItem("localMinutes", minutes);
+  localStorage.setItem("localSeconds", seconds);
+};
+
