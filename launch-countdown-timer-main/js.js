@@ -1,3 +1,5 @@
+// - Dark mode
+
 let dateInMilisec = ''
 
 window.onload = function() {
@@ -55,16 +57,25 @@ document.querySelector(".reset-btn").addEventListener("click", () => {
 // Pick a date Button
 document.querySelector(".submit-btn").addEventListener("click", () => {
   pickADate();
-  modal.style.display = "none"
 });
 
+let message = document.querySelector('.alert')
+
 function pickADate() {
-  let yearPick = document.getElementById("year-pick").value;
+  let yearPick = document.querySelector("#year-pick").value;
   let monthPick = document.getElementById("month-pick").value;
   let dayPick = document.getElementById("day-pick").value;
   let dueDate = new Date(yearPick, monthPick - 1, dayPick);
+  let now = new Date().getTime();
+  let DueDateInMilisec = dueDate.getTime()
+  if((DueDateInMilisec - now) <= 0 || isNaN(dueDate)){
+    message.style.display = 'block'
+  } else {
   console.log("Due date: " + dueDate);
   dateInMilisec = dueDate.getTime();
+  modal.style.display = "none"
+  message.style.display = 'none'
+}
 }
 
 // Modal
@@ -77,24 +88,23 @@ pickBtn.onclick = function () {
   modal.style.display = "flex";
 };
 
-// Close modal
+// Close modal button
 cancelBtn.onclick = function () {
   modal.style.display = "none"
 };
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+// Close the modal wWhen the user clicks anywhere outside of it
+window.onclick = function(event) {
+  if (event.target != pickBtn 
+    && event.target != modal 
+    && modal.style.display == "flex") {
+      // modal.style.display = "none";
+    console.log('clicked')
   }
 };
 
   // Set time in localStorage
 window.onunload = function() {
   localStorage.setItem("localDateInMilisec", dateInMilisec);
-  localStorage.setItem("localDays", days);
-  localStorage.setItem("localHours", hours);
-  localStorage.setItem("localMinutes", minutes);
-  localStorage.setItem("localSeconds", seconds);
 };
 

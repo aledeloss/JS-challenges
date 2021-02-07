@@ -6,6 +6,7 @@ $grayish-blue: hsl(237, 18%, 59%);
 $soft-red: hsl(345, 95%, 68%);
 $white: hsl(0, 0%, 100%);
 $dark-desaturated-blue: hsl(236, 21%, 26%);
+$very-soft-blue: hsl(235, 21%, 56%);
 $very-dark-blue: hsl(235, 16%, 14%);
 $very-dark-mostly-black-blue: hsl(234, 17%, 12%);
 
@@ -40,6 +41,14 @@ html {
 }
 
 body {
+  @include center();
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: $very-dark-blue;
+}
+
+.countdown-page {
+  width: 100vw;
   @include center();
   flex-direction: column;
   justify-content: flex-start;
@@ -125,20 +134,22 @@ button:hover {
 #modal {
   display: none;
   flex-direction: column;
-  position: fixed;
-  top: 200px;
+  position: absolute;
+  top: 250px;
   z-index: 1;
   padding: 50px;
   background-color: $dark-desaturated-blue;
   color: $soft-red;
-  left: 0;
-  top: 0;
-  width: 60%; /* Full width */
-  height: 300px; /* Full height */
+  height: 250px;
+  width: 350px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .modal-btn-container {
   @include center();
+  margin: 10px ;
 }
 
 .buttons-container {
@@ -159,12 +170,19 @@ input {
   height: 30px;
   width: 50px;
   border-radius: 5px;
+  border: none;
   outline: none;
   background-color: $grayish-blue;
   margin: auto 0;
   font-size: 14px;
+  text-align: center;
 }
 
+.alert {
+  color: $soft-red;
+  display: none;
+  text-align: center;
+}
 //Footer
 .icons-container {
   position: absolute;
