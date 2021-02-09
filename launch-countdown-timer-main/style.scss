@@ -57,7 +57,8 @@ body {
 
 h1 {
   @include center();
-  width: 300px;
+  text-align: center;
+  width: 350px;
   height: 20vh;
   margin-top: 15vh;
   top: 50px;
@@ -159,6 +160,7 @@ button:hover {
 form {
   @include center();
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .modal-btn {

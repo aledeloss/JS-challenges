@@ -1,7 +1,8 @@
-// - Dark mode
+//Pending: - Dark mode
 
 let dateInMilisec = ''
 
+// Onload check for storaged date if available
 window.onload = function() {
   if(localStorage.getItem("localDateInMilisec")) {
     dateInMilisec = localStorage.getItem("localDateInMilisec")
@@ -17,10 +18,11 @@ function setDueTime() {
   automaticDate.setDate(automaticDate.getDate() + 14);
   dateInMilisec = automaticDate.getTime();
 }
-// setDueTime();
+
+let title = document.querySelector('.title')
 
 function setTime() {
-  // Calcular distance between now and duedate
+  // Calculate distance between now and duedate
   let now = new Date().getTime();
   let distance = dateInMilisec - now;
 
@@ -36,18 +38,25 @@ function setTime() {
   let minutesDiv = document.querySelector(".minutes-count");
   let secondsDiv = document.querySelector(".seconds-count");
 
-  daysDiv.innerHTML = days;
-  hoursDiv.innerHTML = hours;
-  minutesDiv.innerHTML = minutes;
-  secondsDiv.innerHTML = seconds;
+  if(distance > 0){
+    daysDiv.innerHTML = days;
+    hoursDiv.innerHTML = hours;
+    minutesDiv.innerHTML = minutes;
+    secondsDiv.innerHTML = seconds;
+  }
+  else {
+    daysDiv.innerHTML = '🎉';
+    hoursDiv.innerHTML = '🎉';
+    minutesDiv.innerHTML = '🎉';
+    secondsDiv.innerHTML = '🎉';  
+    title.innerHTML = 'Congratulations!';
+    clearInterval(updateCountdown)  
+  }
 }
 
-function updateCountdown() {
-  setInterval(function () {
+let updateCountdown = setInterval(function () {
     setTime();
   }, 1000);
-}
-updateCountdown();
 
 // Reset Button
 document.querySelector(".reset-btn").addEventListener("click", () => {
@@ -78,7 +87,7 @@ function pickADate() {
 }
 }
 
-// Modal
+// Modal - Based on W3School Example
 var modal = document.getElementById("modal");
 var pickBtn = document.getElementById("pick-btn");
 var cancelBtn = document.querySelector(".cancel-btn");
@@ -93,12 +102,11 @@ cancelBtn.onclick = function () {
   modal.style.display = "none"
 };
 
-// Close the modal wWhen the user clicks anywhere outside of it
+// Close the modal wWhen the user clicks anywhere outside of it - NOT WORKING
 window.onclick = function(event) {
   if (event.target != pickBtn 
     && event.target != modal 
     && modal.style.display == "flex") {
-      // modal.style.display = "none";
     console.log('clicked')
   }
 };
