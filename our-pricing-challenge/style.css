@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+/* Mediaqueries */
 /* Colors */
 body {
   font-family: "Montserrat", sans-serif;
@@ -159,15 +160,27 @@ header {
     margin-left: 0px;
     margin-right: 0px;
   }
-  .card .mouseOverCard {
-    height: 550px;
-  }
 }
 
 .card:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
   background-image: linear-gradient(to right, #a3a8f0, #696fdd);
   color: white;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card:hover button {
+  background: white;
+  background-image: none;
+  color: #696fdd;
+}
+
+.card:hover button {
+  background-image: none;
+  background-color: white;
+  color: #696fdd;
 }
 
 .subscription {
@@ -191,18 +204,6 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.mouseOverCard {
-  background-color: linear-gradient(to right, #a3a8f0, #696fdd);
-  height: 430px;
-  cursor: pointer;
-}
-
-.mouseOverCard button {
-  background-color: white;
-  background-image: none;
-  color: #696fdd;
 }
 
 /* Switch style - W3School*/
