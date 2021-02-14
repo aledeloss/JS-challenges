@@ -30,7 +30,7 @@ body {
     border-color: solid forestgreen 1px;
 }
 
-.mobile-ilust-container {
+.mobile-illust-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,13 +40,13 @@ body {
     border-color: solid forestgreen 1px;
 }
 
-.woman-ilust-mobile {
+.woman-illust-mobile {
     margin-left: 0;
     margin-right: 0;
 
 }
 
-.ilust-shadow { 
+.illust-shadow { 
     position: relative;
     top: -90px;
     left: 20px;
@@ -63,7 +63,7 @@ body {
 
 }
 
-.desktop-ilust-container {
+.desktop-illust-container {
     display: none;
 }
 
@@ -127,12 +127,12 @@ h1 {
         width: 60vw;
         padding-top: 45px;
     }
-    .desktop-ilust-container {
+    .desktop-illust-container {
         display: inline-block;
         position: relative;
         left: -100px;
     }
-    .mobile-ilust-container {
+    .mobile-illust-container {
         display: none;
     }
 
