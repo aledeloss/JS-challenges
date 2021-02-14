@@ -1,4 +1,4 @@
-document.querySelectorAll('.question').forEach(openQuestion);
+let addOpenQuestion = document.querySelectorAll('.question').forEach(openQuestion);
 
 function openQuestion(item) {
     item.addEventListener('click', () => {

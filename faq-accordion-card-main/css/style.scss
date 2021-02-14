@@ -1,15 +1,10 @@
 // ---IMPORTS----
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
-
-// :root {
-
-// }
-
 body {
     font-family: 'Kumbh Sans', sans-serif;
-    height: 100vh;
-    margin-top: 5vh;
+    height: 100%;
+    margin-top: 15vh;
     margin-bottom: 10vh;
     background-image: linear-gradient(
         to bottom,
@@ -18,7 +13,8 @@ body {
     );
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-container {
@@ -27,31 +23,48 @@ body {
     align-items: center;
     justify-content: space-around;
     background-color: white ;
-    padding: 20px;
     margin: 20px;
-    margin-top: 100px;
     border-radius: 10px;
+    width: 95%;
+    height: initial;
+    border-color: solid forestgreen 1px;
 }
 
-.ilustruation-container {
+.mobile-ilust-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
     position: relative;
-    top: -130px;
+    top: -100px;
+    border-color: solid forestgreen 1px;
+}
+
+.woman-ilust-mobile {
+    margin-left: 0;
+    margin-right: 0;
+
 }
 
 .ilust-shadow { 
     position: relative;
     top: -90px;
-    left: 30px;
+    left: 20px;
 }
 
 .list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
-    top: -50px;
-    padding: 5px;
+    top: -180px;
+    width: 80%;
+    height: 90%;
+
+}
+
+.desktop-ilust-container {
+    display: none;
 }
 
 h1 {
@@ -72,6 +85,8 @@ h1 {
         color: hsl(14, 88%, 65%);
         cursor: pointer;
     }
+    display: flex;
+    justify-content: space-between; 
 }
 
 .openedArrow {
@@ -94,5 +109,41 @@ h1 {
 }
 
 .attribution {
-    // margin-bottom: 15px;
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+// Mediaqueries
+
+@media (min-width: 1440px) {
+    body {
+    margin-top: 10vh;
+    }
+    .content-container {
+        flex-direction: row;
+        width: 60vw;
+        padding-top: 45px;
+    }
+    .desktop-ilust-container {
+        display: inline-block;
+        position: relative;
+        left: -100px;
+    }
+    .mobile-ilust-container {
+        display: none;
+    }
+
+    h1 {
+       text-align: left;
+    }
+
+    .list-container {
+        position: relative;
+        left: -80px;
+        top: -30px;
+        width: 60%;
+    }
 }
