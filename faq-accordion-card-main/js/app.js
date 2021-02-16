@@ -5,6 +5,7 @@ function openQuestion(item) {
         item.nextElementSibling.classList.toggle("showedAnswer")
         item.children[1].classList.toggle("openedArrow")
         item.classList.toggle("activeQuestion")
+        console.log(item)
     })
 }
 

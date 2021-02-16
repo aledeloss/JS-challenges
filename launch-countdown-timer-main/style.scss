@@ -33,9 +33,6 @@ $very-dark-mostly-black-blue: hsl(234, 17%, 12%);
 
 //General
 
-//* {
-// border: solid orange .5px;
-//}
 html {
  height: 100vh;
 }
@@ -45,6 +42,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   background-color: $very-dark-blue;
+  margin: 0;
+  height: 100vh;
 }
 
 .countdown-page {
@@ -200,8 +199,6 @@ input {
   color: $grayish-blue;
   font-weight: 100;
   letter-spacing: 0.1em;
-  position: absolute;
-  bottom: 0px;
 }
 .attribution a {
   color: $soft-red;
@@ -215,5 +212,5 @@ input {
 
 .bg-bottom {
   @include bg();
-  bottom: -20px;
+  bottom: 0px;
 }
