@@ -1,0 +1,47 @@
+body {
+  height: 100vh;
+}
+
+.todo {
+  width: 90%;
+  height: 30px;
+  border: solid darkkhaki;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.check-container {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: solid salmon 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gold;
+}
+
+.check-icon {
+  display: none;
+}
+
+.check-completed {
+  display: inline-block;
+}
+
+.description-completed {
+  text-decoration: line-through;
+}
+
+.data, .filters {
+  height: 30px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid rebeccapurple;
+}
+
+/*# sourceMappingURL=style.css.map */
