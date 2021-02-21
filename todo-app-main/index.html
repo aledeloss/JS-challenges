@@ -12,7 +12,6 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    
 
     <title>Frontend Mentor | todo app</title>
 
@@ -29,21 +28,28 @@
   </head>
   <body>
     <header class="header">
-      <div class="app-title">TODO</div>
-      <form action="">
-      <input
-        type="text"
-        id="newTodo"
-        name="newTodo"
-        placeholder="Create a new Todo..."
-      />     
-      </form>
+      <div class="title-container">
+        <div class="app-title">TODO</div>
+        <img class="theme" src="images/icon-moon.svg" alt="light mode icon" />
+      </div>
 
+      <div class="input-container">
+        <div class="check-container"></div>
+        <form action="">
+          <input
+            type="text"
+            id="newTodo"
+            name="newTodo"
+            placeholder="Create a new Todo..."
+          />
+        </form>
+      </div>
     </header>
 
     <main>
-      <div class="toDos-container">
-      </div>
+      <div class="main-container">
+        <div class="todos-container"></div>
+        <!-- Todos -->
         <div class="data">
           <span>5 items left</span>
           <span>Clear Completed</span>
@@ -53,8 +59,9 @@
           <div class="active">Active</div>
           <div class="completed">Completed</div>
         </div>
-      <div class="reorder">Drag and drop to reorder list</div>
+      </div>
 
+      <div class="reorder">Drag and drop to reorder list</div>
     </main>
 
     <footer class="attribution">

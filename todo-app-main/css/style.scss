@@ -1,38 +1,118 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;700&display=swap');
+
+// VARIABLES
+$veryLightGray: hsl(0, 0%, 98%);
+$veryLightGrayishBlue: hsl(236, 33%, 92%);
+$lightGrayishBlue: hsl(233, 11%, 84%);
+$darkGrayishBlue: hsl(236, 9%, 61%);
+$veryDarkGrayishBlue: hsl(235, 19%, 35%);
+$gradient1: hsl(192, 100%, 67%);
+$gadient2: hsl(280, 87%, 65%);
+$checkBackgroundGradient: linear-gradient(100deg $gradient1, gradient2);
+
 // * {
 //     border: solid gold;
 // }
 
+// GENERAL
 body {
     height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: $veryLightGrayishBlue;
+}
+
+// HEADER
+
+header {
+    background-image: url("../images/bg-mobile-light.jpg");
+    background-size: cover;
+    height: 20%;
+    color: $veryLightGray;
+    font-size: 1.6em;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+
+
+    input {
+        outline: none;
+        border: none;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+.title-container {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.input-container {
+    display: flex;
+    height: 45px;
+    width: 92%;
+    border-radius: 7px;
+    background-color: #fafafa;
+    color: $lightGrayishBlue;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+}
+// TODOS
+
+main {
+    height: 65vh;
+    background-color: $veryLightGrayishBlue;
+    color: $lightGrayishBlue;
+    font-weight: 50;
+}
+
+.main-container {
+    position: relative;
+    top: -25px;
+    width: 92%;
+    border-radius: 7px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    padding-left: 15px;
 }
 
 .todo {
-    width: 90%;
-    height: 30px;
-    border: solid darkkhaki;
+    height: 45px;
+    width: 92%;
+    background-color: #fafafa;
     display: flex;
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: $lightGrayishBlue;
 }
+//QUITAR BORDE BOTTOM AL ÚLTIMO TODO
+//CENTRAR CHECK EN EL CÍRCULO.
 .check-container {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: solid salmon .5px;
+    border: solid $lightGrayishBlue .5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gold;
-}
-
-
-.check-icon {
-    display: none;
 }
 
 .check-completed {
+    background-image: $checkBackgroundGradient;
+    background-color: $gradient1;
     display: inline-block;
 }
+
+// .todo-description {
+//     text-align: left;
+// }
 
 .description-completed {
     text-decoration: line-through;
@@ -45,5 +125,4 @@ body {
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: solid rebeccapurple;
 }
