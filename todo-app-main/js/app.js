@@ -17,11 +17,12 @@ let registeredTodos = [
   }
 ];
 
-let filter = "all";
 
 //To Do list rendering
 //TODO!: Agregar solamente las tareas nuevas a la lista en lugar de borrar todo y volver a agregarlas.
 let allTodos = document.querySelector(".todos-container");
+
+let filter = "all";
 
 const filterTodos = () => {
   let enabledList = registeredTodos.filter((todo) => todo.enabled == true)
@@ -63,6 +64,8 @@ const renderTodos = () => {
   );
   addCompleteTodo();
   addDeleteTodo();
+  clearCompleted();
+  addItemsLeft()
   addFilters();
 };
 
@@ -131,6 +134,26 @@ const addFilters = () => {
   });
   document.querySelector(".completed").addEventListener("click", () => {
     filter = "complete";
+    renderTodos();
+  });
+};
+
+// Data
+const addItemsLeft = () => {
+  function active(todo){
+    return todo.completed == false && todo.enabled == true
+  }
+  let itemsLeft = registeredTodos.filter(todo => active(todo));
+  document.querySelector(".prueba").innerText = itemsLeft.length;
+};
+
+const clearCompleted = () => {
+  document.querySelector(".clear-completed").addEventListener("click", () => {
+    for(i=0; i<=registeredTodos.length-1; i++) {
+      if(registeredTodos[i].completed == true){
+        registeredTodos[i].enabled = false;
+      };
+    };
     renderTodos();
   });
 };

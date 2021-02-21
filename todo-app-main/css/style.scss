@@ -11,6 +11,13 @@ $gradient1: hsl(192, 100%, 67%);
 $gadient2: hsl(280, 87%, 65%);
 $checkBackgroundGradient: linear-gradient(100deg $gradient1, gradient2);
 
+//MIXINS
+@mixin font {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+
 // * {
 //     border: solid gold;
 // }
@@ -18,6 +25,7 @@ $checkBackgroundGradient: linear-gradient(100deg $gradient1, gradient2);
 // GENERAL
 body {
     height: 100vh;
+    width: 100vw;
     font-family: 'Josefin Sans', sans-serif;
     background-color: $veryLightGrayishBlue;
 }
@@ -28,6 +36,7 @@ header {
     background-image: url("../images/bg-mobile-light.jpg");
     background-size: cover;
     height: 20%;
+    // width: 100%;
     color: $veryLightGray;
     font-size: 1.6em;
     letter-spacing: 2px;
@@ -42,6 +51,8 @@ header {
         border: none;
         margin-left: 10px;
         margin-bottom: 5px;
+        font-family: 'Josefin Sans', sans-serif;
+        @include font;
     }
 }
 
@@ -55,7 +66,7 @@ header {
 .input-container {
     display: flex;
     height: 45px;
-    width: 92%;
+    width: 340px;
     border-radius: 7px;
     background-color: #fafafa;
     color: $lightGrayishBlue;
@@ -69,28 +80,30 @@ main {
     height: 65vh;
     background-color: $veryLightGrayishBlue;
     color: $lightGrayishBlue;
-    font-weight: 50;
 }
 
 .main-container {
     position: relative;
     top: -25px;
-    width: 92%;
+    width: 340px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 7px;
     margin: 0 auto;
     background-color: #fafafa;
-    padding-left: 15px;
+    @include font;
 }
 
 .todo {
     height: 45px;
-    width: 92%;
+    width: 100%;
     background-color: #fafafa;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: $lightGrayishBlue;
+    color: $darkGrayishBlue;
 }
 //QUITAR BORDE BOTTOM AL ÚLTIMO TODO
 //CENTRAR CHECK EN EL CÍRCULO.
@@ -110,12 +123,15 @@ main {
     display: inline-block;
 }
 
-// .todo-description {
-//     text-align: left;
-// }
+.todo-description {
+    text-align: left;
+    margin-left: 10px;
+    width: 95%;
+}
 
 .description-completed {
     text-decoration: line-through;
+    color: $veryLightGrayishBlue;
 }
 
 .data, .filters {

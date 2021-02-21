@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;700&display=swap");
 body {
   height: 100vh;
+  width: 100vw;
   font-family: 'Josefin Sans', sans-serif;
   background-color: #e4e5f1;
 }
@@ -29,6 +30,9 @@ header input {
   border: none;
   margin-left: 10px;
   margin-bottom: 5px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .title-container {
@@ -47,7 +51,7 @@ header input {
   display: -ms-flexbox;
   display: flex;
   height: 45px;
-  width: 92%;
+  width: 340px;
   border-radius: 7px;
   background-color: #fafafa;
   color: #d2d3db;
@@ -62,22 +66,24 @@ main {
   height: 65vh;
   background-color: #e4e5f1;
   color: #d2d3db;
-  font-weight: 50;
 }
 
 .main-container {
   position: relative;
   top: -25px;
-  width: 92%;
+  width: 340px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 7px;
   margin: 0 auto;
   background-color: #fafafa;
-  padding-left: 15px;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .todo {
   height: 45px;
-  width: 92%;
+  width: 100%;
   background-color: #fafafa;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,6 +99,7 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-bottom: #d2d3db;
+  color: #9394a5;
 }
 
 .check-container {
@@ -119,10 +126,13 @@ main {
 
 .todo-description {
   text-align: left;
+  margin-left: 10px;
+  width: 95%;
 }
 
 .description-completed {
   text-decoration: line-through;
+  color: #e4e5f1;
 }
 
 .data, .filters {

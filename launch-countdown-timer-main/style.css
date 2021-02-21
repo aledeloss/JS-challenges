@@ -27,6 +27,8 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #1e1f29;
+  margin: 0;
+  height: 100vh;
 }
 
 .countdown-page {
@@ -292,8 +294,6 @@ input {
   color: #8486a9;
   font-weight: 100;
   letter-spacing: 0.1em;
-  position: absolute;
-  bottom: 0px;
 }
 
 .attribution a {
@@ -311,6 +311,6 @@ input {
   position: absolute;
   width: 100%;
   z-index: -1;
-  bottom: -20px;
+  bottom: 0px;
 }
 /*# sourceMappingURL=style.css.map */
